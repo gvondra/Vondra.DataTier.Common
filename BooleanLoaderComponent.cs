@@ -9,6 +9,18 @@ namespace Vondra.DataTier.Common
 
         public object GetValue(IDataReader reader, int ordinal)
         {
+            if (reader.GetFieldType(ordinal).Equals(typeof(string)))
+            {
+                return GetValueString(reader, ordinal);
+            }
+            else
+            {
+                return reader.GetBoolean(ordinal);
+            }
+        }
+
+        public object GetValueString(IDataReader reader, int ordinal)
+        {
             string value = reader.GetString(ordinal).Trim();
                 
             if (String.IsNullOrEmpty(value))
@@ -17,7 +29,7 @@ namespace Vondra.DataTier.Common
             }
             else
             {
-                return value.StartsWith("Y");
+                return value.ToUpper().StartsWith("Y") || value.ToUpper().StartsWith("T");
             }
         }
     
