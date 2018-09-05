@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Vondra.DataTier.Common</AssemblyName>
+    <RootNamespace>Vondra.DataTier.Common</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Greg Vondra</Authors>
+    <Company>Beer Can Beer</Company>
+    <Product>Vondra.DataTier.Common</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
+  </ItemGroup>
+
+</Project>
