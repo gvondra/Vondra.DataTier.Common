@@ -7,7 +7,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Greg Vondra</Authors>
     <Company>Beer Can Beer</Company>
-    <Product>Vondra.DataTier.Common</Product>
+    <Product>Vondra.DataTier.Common</Product>  
+    <Version>1.0.1</Version>  
   </PropertyGroup>
 
   <ItemGroup>
