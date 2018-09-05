@@ -33,7 +33,7 @@ namespace Vondra.DataTier.Common
         public void EstablishTransaction(ITransactionHandler transactionHandler, IDbTransactionObserver observer)
         {
             //first check the connection state.  If it not open then dispose of it
-            if (!(transactionHandler.Connection == null)) {
+            if (transactionHandler.Connection != null) {
                 if (transactionHandler.Connection.State != ConnectionState.Open)
                 {
                     transactionHandler.Connection.Dispose();
