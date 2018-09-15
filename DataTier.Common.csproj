@@ -8,7 +8,8 @@
     <Authors>Greg Vondra</Authors>
     <Company>Beer Can Beer</Company>
     <Product>Vondra.DataTier.Common</Product>  
-    <Version>1.0.2</Version>  
+    <Version>1.0.3</Version>  
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>  
   </PropertyGroup>
 
   <ItemGroup>

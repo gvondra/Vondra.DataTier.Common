@@ -9,7 +9,14 @@ namespace Vondra.DataTier.Common
     {
         public object GetValue(IDataReader reader, int ordinal)
         {
-            return Guid.Parse(reader.GetString(ordinal).Trim());
+            if (reader.GetFieldType(ordinal).Equals(typeof(string)))
+            {
+                return Guid.Parse(reader.GetString(ordinal).Trim());
+            }
+            else
+            {
+                return (Guid)reader.GetValue(ordinal);
+            }                
         }
 
         public bool IsApplicable(ColumnMapping mapping)
