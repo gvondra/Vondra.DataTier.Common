@@ -139,18 +139,37 @@ namespace Vondra.DataTier.Common
 
         public static Object GetParameterValue(bool? value)
         {
-            if (value.HasValue && value.Value)
+            if (value.HasValue)
             {
-                return "Y";
+                return value.Value;
             }                
-            else if (value.HasValue && value.Value == false)
+            else
             {
-                return "N";
+                return DBNull.Value;
+            }
+        }
+
+        public static Object GetParameterValue(bool? value, DbType dbType)
+        {
+            if (dbType == DbType.AnsiString || dbType == DbType.AnsiStringFixedLength || dbType == DbType.String || dbType == DbType.StringFixedLength)
+            {
+                if (value.HasValue && value.Value)
+                {
+                    return "Y";
+                }
+                else if (value.HasValue && value.Value == false)
+                {
+                    return "N";
+                }
+                else
+                {
+                    return string.Empty;
+                }
             }
             else
             {
-                return string.Empty;
-            }
+                return GetParameterValue(value);
+            }            
         }
 
         public static Object GetParameterValue(XmlNode value)
